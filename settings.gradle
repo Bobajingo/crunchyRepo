@@ -1,23 +1,24 @@
-// build tools and plugins
 pluginManagement {
     repositories {
-         mavenCentral()
-         google()
+        mavenCentral() // Checks the global Java repository package index second
+        gradlePluginPortal()
+        google()       // Directs Gradle to check Google's distribution server first
+    }
+    plugins {
+        // Maps the Android plugin ID directly to a stable, compatible version number
+        id 'com.android.application' version '8.4.0'
     }
 }
 
-// app library dependencies
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        // custom repo where Anikku hosts its source templates
-        maven { url 'https://jitpack.io' }   
-        mavenCentral()
         google()
-
+        mavenCentral()
+        maven { url 'https://jitpack.io' } // Necessary framework repository for Anikku source elements
+        google()
     }
 }
 
-include ':app'
 rootProject.name = "crunchyRepo"
-
+include ':app'
