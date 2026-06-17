@@ -1,3 +1,23 @@
-// Where to find build.gradle (app folder)
+// build tools and plugins
+pluginManagement {
+    repositories {
+         mavenCentral()
+         google()
+    }
+}
+
+// app library dependencies
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        // custom repo where Anikku hosts its source templates
+        maven { url 'https://jitpack.io' }   
+        mavenCentral()
+        google()
+
+    }
+}
+
 include ':app'
 rootProject.name = "crunchyRepo"
+
