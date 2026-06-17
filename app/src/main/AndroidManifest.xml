@@ -1,0 +1,7 @@
+<!-- For Anikku authentication -->
+<manifest xmlns:android="http://android.com" package="com.bobajingo.crunchyrepo">
+	<application>
+		<meta-data android:name="animeextension.class" android:value="com.bobajingo.crunchyrepo.Crunchyroll" />
+        	<meta-data android:name="animeextension.language" android:value="en" />
+    	</application>
+</manifest>

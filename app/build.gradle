@@ -1,0 +1,39 @@
+plugins{
+	//to compile as an android APK
+	id 'com.android.application'
+}
+
+
+android{
+	compileSdkVersion 34 //Android 14
+
+	defaultConfig{
+        	applicationId "com.bobajingo.crunchyrepo"
+        	minSdkVersion 21 //Android 5.0 or higher to run this
+        	targetSdkVersion 34 //Optimized for Android 14
+        	versionCode 1
+        	versionName "1.0"
+	}
+
+	buildTypes{
+        	release {
+            		// Possible runtime error risk - turn back on for optimization if needed
+            		minifyEnabled false
+        	}
+    	}
+
+	compileOptions{
+        	sourceCompatibility JavaVersion.VERSION_17
+        	targetCompatibility JavaVersion.VERSION_17
+	}
+
+}
+
+
+dependencies{
+	// OkHttp acts exactly like Python's 'requests' module
+	implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+
+	// For parsing JSON data
+	implementation 'org.json:json:20240303'
+}
