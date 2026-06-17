@@ -37,5 +37,5 @@ dependencies{
 	// For parsing JSON data
 	implementation 'org.json:json:20240303'
     // Anikku template blueprints
-    compileOnly 'com.github.komikku-app:aniyomi-extensions-lib:main-SNAPSHOT'
+    compileOnly 'eu.kanade.tachiyomi:lib-multisrc:1.5'
 }
