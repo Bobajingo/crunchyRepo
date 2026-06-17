@@ -6,6 +6,9 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import eu.kanade.tachiyomi.animesource.online.AnimeHttpSource;
+import eu.kanade.tachiyomi.animesource.model.AnimesPage;
+import eu.kanade.tachiyomi.animesource.model.SAnime;
 
 // extends from Anikku - handles video player
 public class Crunchyroll extends AnimeHttpSource{
@@ -41,7 +44,7 @@ public class Crunchyroll extends AnimeHttpSource{
             		for(int i = 0; i < items.length(); i++){
                 		JSONObject currentShow = items.getJSONObject(i);
                 		// Blank template object for Anikku specifically
-                		SAnime anime = new SAnime();
+                		SAnime anime = SAnime.create();
                 		// Get Anime name
                 		String titleText = currentShow.getString("title");
                 		anime.setTitle(titleText);
@@ -62,7 +65,7 @@ public class Crunchyroll extends AnimeHttpSource{
             		e.printStackTrace(); 
         	}
         	// Returns list back to Anikku. True if next page of entries to load if scroll down
-        	return new AnimesPage(animeList, true);
+        	return new AnimesPage(animeList, false);
     	}
 
 }
