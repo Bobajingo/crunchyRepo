@@ -1,0 +1,36 @@
+name: Build Anikku Extension
+
+# On code push, have GitHub rebuild/recreate APK via cloud computer
+on:
+  push:
+    branches:
+      - main
+
+# Instructions run on Github cloud computer to build APK
+jobs:
+# OS on Github cloud computer
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # Checkout this repo
+    - name: Checkout Code
+      uses: actions/checkout@v4
+    # Set up JDK to compile Android code
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+    # Enable Gradle permissions
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+      continue-on-error: true
+    # Build Android APK
+    - name: Build with Gradle
+      run: ./gradlew assembleRelease || gradle assembleRelease
+    # Save APK as downloadable
+    - name: Upload Finished Extension
+      uses: actions/upload-artifact@v4
+      with:
+        name: crunchyroll-extension
+        path: app/build/outputs/apk/release/*.apk
