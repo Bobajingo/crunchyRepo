@@ -1,7 +1,18 @@
 <!-- For Anikku authentication -->
-<manifest xmlns:android="http://android.com" package="com.bobajingo.crunchyrepo">
-	<application>
-		<meta-data android:name="animeextension.class" android:value="com.bobajingo.crunchyrepo.Crunchyroll" />
-        	<meta-data android:name="animeextension.language" android:value="en" />
-    	</application>
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bobajingo.crunchyrepo">
+
+    <application>
+        <meta-data
+            android:name="animeextension.class"
+            android:value="com.bobajingo.crunchyrepo.Crunchyroll" />
+        <meta-data
+            android:name="animeextension.language"
+            android:value="en" />
+        <meta-data
+            android:name="animeextension.type"
+            android:value="video" />
+    </application>
+	
 </manifest>
