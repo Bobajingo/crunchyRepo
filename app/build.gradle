@@ -5,6 +5,7 @@ plugins{
 
 
 android{
+	namespace 'com.bobajingo.crunchyrepo' //build will fail without explicit namespace
 	compileSdkVersion 34 //Android 14
 
 	defaultConfig{
@@ -33,7 +34,8 @@ android{
 dependencies{
 	// OkHttp acts exactly like Python's 'requests' module
 	implementation 'com.squareup.okhttp3:okhttp:4.12.0'
-
 	// For parsing JSON data
 	implementation 'org.json:json:20240303'
+    // Anikku template blueprints
+    compileOnly 'com.github.aniyomiorg:aniyomi-extensions:1.5'
 }
