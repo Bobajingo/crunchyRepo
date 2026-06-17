@@ -1,21 +1,20 @@
 pluginManagement {
     repositories {
+        google()
         mavenCentral() 
         gradlePluginPortal()
-        google()      
     }
     plugins {
-        id 'com.android.application' version '8.4.0' // Gradle will fail build without version number
+        id 'com.android.application' version '8.6.0' 
     }
 }
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PRESERVE_SHARED_REPOS)
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://jitpack.io' } // Necessary framework repository for Anikku source elements
-        google()
+        maven { url 'https://jitpack.io' }
     }
 }
 
