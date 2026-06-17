@@ -1,12 +1,11 @@
 pluginManagement {
     repositories {
-        mavenCentral() // Checks the global Java repository package index second
+        mavenCentral() 
         gradlePluginPortal()
-        google()       // Directs Gradle to check Google's distribution server first
+        google()      
     }
     plugins {
-        // Maps the Android plugin ID directly to a stable, compatible version number
-        id 'com.android.application' version '8.4.0'
+        id 'com.android.application' version '8.4.0' // Gradle will fail build without version number
     }
 }
 
