@@ -23,7 +23,7 @@ jobs:
         distribution: 'temurin'
     # Create Gradle wrapper
     - name: Setup Gradle Wrapper
-      run: gradle wrapper --gradle-version 8.6
+      run: gradle wrapper --gradle-version 8.7
     # Enable Gradle permissions
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
